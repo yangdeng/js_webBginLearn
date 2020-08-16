@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pics{
+            width: 739px;
+            height: 419px;
+            border: 0px solid red;
+            margin: 0 auto;
+            position: relative;
+        }
+        #pics>.lleft{
+            position: absolute;
+            top: 48%;
+            left: 0;
+            cursor: pointer;
+        }
+        #pics>.rright{
+            top: 48%;
+            right: 0;
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="pics">
+        <a href="https://www.baidu.com">
+            <img id="img" src="../imgs/gm1-6.jpg" alt="">
+        </a>
+        <div class="lleft">
+            <img src="../imgs/l1-6.png" alt="">
+        </div>
+        <div class="rright">
+            <img src="../imgs/r1-6.png" alt="">
+        </div>
+    </div>
+    <script>
+        //新建数组保存全部图片的地址
+        var arrImgs = ['../imgs/gm1-6.jpg','../imgs/gm2-6.jpg','../imgs/gm3-6.jpg','../imgs/gm4-6.jpg','../imgs/gm5-6.jpg'];
+        //获取右侧点击按钮对象
+        var rright = document.getElementsByClassName('rright')[0];
+         //获取左侧点击按钮对象
+         var lleft = document.getElementsByClassName('lleft')[0];
+         //获取图片对象
+         var img = document.getElementById('img');
+        //定义一个下标变量
+        var index = 0;
+        //绑定按钮的事件
+        rright.onclick=function(){
+            index += 1;
+            //判断是否超过最大值
+            if(index == arrImgs.length) index = 0;
+            console.log(index);
+            img.setAttribute('src',arrImgs[index]);
+        }
+        lleft.onclick=function(){
+            if (index==0) index = arrImgs.length;
+            index--;
+            console.log(index);
+            img.setAttribute('src',arrImgs[index]);
+        }
+    </script>
+</body>
+</html>

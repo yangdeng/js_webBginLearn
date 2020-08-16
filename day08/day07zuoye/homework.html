@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fs{
+            width: 260px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        .focus{
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="fs">
+        <div class="title">
+            <!-- 为了使a元素不跳转，需在href中添加javascript: -->
+            <a href="javascript:">大</a>
+            <a href="javascript:">中</a>
+            <a href="javascript:" class="focus">小</a>
+        </div>
+        <p id="p1">
+            你在电脑前看这段文字，写文字的人在百度等你。N年前你来到了这个世界，N年后你想改变世界。期待你脚踏祥云，与百度一起改变世界。
+        </p>
+    </div>
+    <script>
+        var links = document.getElementsByTagName('a');
+        //根据id号获取p元素并保存到变量中
+        var p11 = document.getElementById('p1');
+        // for( var i = 0; i < links.length; i++ ){
+        //     //帮点每个元素的单击事件
+        //     links[i].onclick=function(){
+        //         console.log('ok');
+        //     }
+        // }
+        
+        function clearFocus(){
+            for(i = 0;i < links.length; i++){
+                links[i].removeAttribute('class');
+            }
+        }
+        
+        links[0].onclick=function(){
+            p11.style.fontSize='20px';
+            clearFocus()
+            // console.log('ok');
+            //设置选中效果样式
+            this.className='focus';
+        }
+        links[1].onclick=function(){
+            p11.style.fontSize='18px';
+            clearFocus()
+            // console.log('ok');
+            //设置选中效果样式
+            this.className='focus';
+        }
+        links[2].onclick=function(){
+            p11.style.fontSize='16px';
+            clearFocus()
+            // console.log('ok');
+            //设置选中效果样式
+            this.className='focus';
+        }
+    </script>
+</body>
+</html>

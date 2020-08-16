@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #check .txt{
+            padding: 5px;
+        }
+        #check .btn{
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="check">
+        <h3>输入文字的验证:</h3>
+        <input type="text" id="txt" class="txt" placeholder="请输入字符串内容">
+        <div class="btn">
+            <button onclick="bb()">验证</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script>
+        function bb(){
+        //分别获取元素对象，并保存
+        var txt = document.getElementById("txt");
+        var res = document.getElementById("result")
+        //根据文本库获取的值，进行判断
+        var num = txt.value;
+        var isNum = isNaN(Number(num))?false:true;
+        res.innerText=isNum?'输入错误':'输入正确';}
+    </script>
+</body>
+</html>

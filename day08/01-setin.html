@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 130px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            padding: 10px 5px;
+            overflow: hidden;
+        }
+        #box>span{
+            /* display: inline-block; */
+            width: 20px;
+            text-align: center;
+            font-size: 21px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="stop">停止</button> -->
+
+    <!-- <div id="box">
+        <span id="hour">00</span>
+        <span style="width: 30px;">:</span>
+        <span id="minu">00</span>
+        <span style="width: 30px;">:</span>
+        <span id="sec">00</span>
+    </div> -->
+
+     <script>
+        //在控制台每个一秒输出OK
+        //  var tashid = setInterval(function(){
+        //      console.log("OK");
+        //  }, 1000)
+
+        //  var btn = document.getElementById("stop");
+        //  btn.onclick=function(){
+        //      //停止定时器的进程
+        //      clearInterval(tashid);
+        //  }
+
+        //定义一个定时器
+        // var taskid = setInterval(function(){
+        //     var dt = new Date();
+        //     document.getElementById("hour").innerText=changeTo(dt.getHours());
+        //     document.getElementById("minu").innerText=changeTo(dt.getMinutes());
+        //     document.getElementById("sec").innerText=changeTo(dt.getSeconds());
+        // },1000)
+
+        // function changeTo(n){
+        //     if (n < 10){
+        //         return '0' + n;
+        //     }
+        //     else return n;
+        // }
+        var tashid3 = setTimeout(function(){
+            console.log("天气很好");
+        },2000)
+        
+        var tashid4 = setTimeout(function(){
+            console.log("简体中文");
+        },4000)
+     </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        ul>li{
+            float: left;
+            border: 1px solid red;
+            text-align: center;
+        }
+        .top{
+            width: 404px;
+            overflow: hidden;
+        }
+        .tip{
+            float: left;
+        }
+        .change{
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="tip">相关书籍</div>
+        <div class="change">换一换</div>
+    </div>
+    <ul>
+        <li>
+            <img src="imgs/bk0-8.jpg" alt="">
+            <h3>
+               <a href="javaScript:;">第一本图书</a> 
+            </h3>
+            <p>属于第一类</p>
+        </li>
+        <li>
+            <img src="imgs/bk0-8.jpg" alt="">
+            <h3>
+                <a href="javaScript:;">第二本图书</a>
+            </h3>
+            <p>属于第二类</p>
+        </li>
+    </ul>
+
+    <script>
+        //定义一个数组保存5项数据
+        var arrBooks = [
+            {url:"imgs/bk0-8.jpg",name:"第一本图书",cls:"属于第一类"},
+            {url:"imgs/bk1-8.jpg",name:"第二本图书",cls:"属于第二类"},
+            {url:"imgs/bk2-8.jpg",name:"第三本图书",cls:"属于第三类"},
+            {url:"imgs/bk3-8.jpg",name:"第四本图书",cls:"属于第四类"},
+            {url:"imgs/bk4-8.jpg",name:"第五本图书",cls:"属于第五类"}]
+
+        //使用选择器获取换一换按钮
+        $(".change").on("click",function(){
+            //生成两个随机的下标
+            //根据下标获取数组内容
+            //将元素数据显示在页面中
+            // console.log(createNum(2));
+            var HTML = "";
+            var _tmpArr = createNum(2);
+            for( var i = 0; i < _tmpArr.length; i++ )
+            {
+                // console.log(_tmpArr[i]);
+                HTML += '<li>';
+                HTML += '<img src="'+arrBooks[_tmpArr[i]].url+'" alt="">';
+                HTML += '<h3><a href="javaScript:;">'+arrBooks[_tmpArr[i]].name+'</a> </h3>';
+                HTML += '<p>'+arrBooks[_tmpArr[i]].cls+'</p></li>';
+            }
+            $("ul").html($(HTML))
+        })
+
+        //定义一个函数生成指定的随机数
+        function createNum(count){
+            var arrTmp = [];
+            for(var i = 0; i < count; i++)
+            {
+                var _index = Math.floor(Math.random()*arrBooks.length);
+                arrTmp.push(_index);
+            }
+            return arrTmp;
+        }
+    </script>
+</body>
+</html>

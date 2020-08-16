@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tabs{
+            width: 416px;
+            height: 218px;
+            border: solid 1px red;
+        }
+        #tabs>.nav{
+            overflow: hidden;
+        }
+        #tabs>.nav>div{
+            float: left;
+            width: 104px;
+            text-align: center;
+            padding: 5px 0;
+        }
+        .hid{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        .bg{
+            background-color: #c5c5c5;
+        }
+        .focus{
+            background-color: #0392cc;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabs">
+        <div class="nav">
+            <div class="bg" id="div1">热点新闻</div>
+            <div class="bg" id="div2">合作播报</div>
+            <div class="bg" id="div3">行业资讯</div>
+            <div id="div4" class="focus">运营攻略</div>
+        </div>
+        <div class="con">
+            <div id="div1_1" class="hid">111</div>
+            <div id="div2_2" class="hid">222</div>
+            <div id="div3_3" class="hid">333</div>
+            <div id="div4_4">444</div>
+        </div>
+    </div>
+    <script>
+        function $$(id){
+            return document.getElementById(id);
+        }
+        $$("div1").onclick=function(){
+            $$("div1").className = 'focus';
+            $$("div2").className = 'bg'
+            $$("div3").className = 'bg'
+            $$("div4").className = 'bg'
+
+            $$("div1_1").className = 'show';
+            $$("div2_2").className = 'hid';
+            $$("div3_3").className = 'hid';
+            $$("div4_4").className = 'hid';
+        }
+        $$("div2").onclick=function(){
+            $$("div1").className = 'bg';
+            $$("div2").className = 'focus'
+            $$("div3").className = 'bg'
+            $$("div4").className = 'bg'
+
+            $$("div1_1").className = 'hid';
+            $$("div2_2").className = 'show';
+            $$("div3_3").className = 'hid';
+            $$("div4_4").className = 'hid';
+        }
+        $$("div3").onclick=function(){
+            $$("div1").className = 'bg';
+            $$("div2").className = 'bg'
+            $$("div3").className = 'focus'
+            $$("div4").className = 'bg'
+
+            $$("div1_1").className = 'hid';
+            $$("div2_2").className = 'hid';
+            $$("div3_3").className = 'show';
+            $$("div4_4").className = 'hid';
+        }
+        $$("div4").onclick=function(){
+            $$("div1").className = 'bg';
+            $$("div2").className = 'bg'
+            $$("div3").className = 'bg'
+            $$("div4").className = 'focus'
+
+            $$("div1_1").className = 'hid';
+            $$("div2_2").className = 'hid';
+            $$("div3_3").className = 'hid';
+            $$("div4_4").className = 'show';
+        }
+    </script>
+</body>
+</html>

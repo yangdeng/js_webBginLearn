@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 100px;
+            margin: 0 auto;
+            border: solid 1px #666;
+            background-color: #eee;
+            text-align: center;
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+        0000
+    </div>
+
+    <script>
+        var i = 1, sum = 0;
+        while(i <= 100){
+            sum += i;
+            i++;
+        }
+        var a=document.getElementById("result");
+        a.innerText=sum;
+    </script>
+</body>
+</html>

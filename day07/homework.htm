@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #search{
+            width: 260px;
+            margin: 0 auto;;
+        }
+        p>span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="search">
+        <input type="text" id="key">
+        <button id="btn">查找</button>
+        <p id="p1">
+            你在电脑前看这段文字，写文字的人在百度等你。N年前你来到了这个世界，N年后你想改变世界。
+        </p>
+    </div>
+    <script>
+        function $$(id){
+            return document.getElementById(id);
+        }
+        //获取查询按钮，并绑定单击对象
+        var btnSearch = $$("btn");
+        //获取文本框对象，并保存
+        var key = $$("key");
+        var p1 = $$("p1");
+
+        btnSearch.onclick=function(){
+            var reg = new RegExp(key.value, 'ig');
+            //获取内容
+            var newStr = p1.innerHTML.replace(reg, "<span>"+key.value+"</span>")
+            console.log(newStr);
+            //重置新的字符内容
+            p1.innerHTML=newStr;   
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 260px;
+            border: solid 1px #ccc;
+        }
+        ul>li:nth-child(1){
+           font-weight: 700;
+           background-color: #eee; 
+           border: 0;
+        }
+        ul>li{
+            padding: 5px 10px;
+            border: dashed 1px #ccc;
+        }
+        ul>li>span{
+            display: inline-block;
+            width: 80px;
+        }
+        #add{
+            padding: 5px 10px;
+        }
+        #add>div>span{
+            display: inline-block;
+            width: 60px;
+            text-align: right;
+        }
+        #add>div{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="stu">
+        <ul id="ul">
+            <!-- <li><span>姓名</span><span>年龄</span></li> -->
+            <!-- <li><span>张三</span><span>20</span></li>
+            <li><span>李四</span><span>18</span></li> -->
+        </ul>
+        <div id="add" >
+            <div>
+                <span>姓名：</span>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <span>年龄：</span>
+                <input type="text" name="age" id="age">
+            </div>
+            <div>
+                <span></span>
+                <button id="btnA">增加</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //定义一个数组
+        var stu=[{name:'张三',age:20},
+                 {name:'李四',age:30},
+                 {name:'王二',age:10}]
+
+        function loadSut(){
+             //定义一个保存全部字符内容的变量
+            HTML = '<li><span>姓名</span><span>年龄</span></li>';
+            //读取数组,使用遍历的方式
+            for( var i = 0; i < stu.length; i++ ){
+                HTML +='<li>';
+                HTML += '<span>'+stu[i].name+'</span>';
+                HTML += '<span>'+stu[i].age+'</span>';
+                HTML += '</li>';
+            }
+            document.getElementById("ul").innerHTML=HTML;
+        }
+        loadSut();
+        //获取增加按钮元素队形并保存
+        document.getElementById("btnA").onclick=function(){
+            //获取文本框中输入的值
+            var _name = document.getElementById("name").value;
+            var _age = document.getElementById("age").value;
+            //声明一个对象
+            var _obj={};
+            //设置对象的值
+            _obj.name = _name;
+            _obj.age = _age;
+            //讲对象增加到数组中
+            stu.push(_obj);
+            console.log(stu)
+            loadSut();
+        }
+        // var arr2=['a','b','e', 'c']
+        // // arr2.pop();//删除数组最后一项元素
+        // // console.log(arr2.toString());
+        // // console.log(arr2.unshift('a1'));
+        // // console.log(arr2.toString());
+        // arr2.sort();//正序排序
+        // arr2.reverse();//反排
+        // console.log(arr2.toString());
+
+        var arr3=[1,3,5];//一维数组
+        var arr4=[[3,6],[7,8],[10,12]];//二维数组
+        console.log(arr4[0][1])
+    </script>
+</body>
+</html>

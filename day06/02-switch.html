@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="sw">
+        <!-- 拖动元素 type="range"-->
+        <!-- <input id="num" type="range" onchange="aa()" min="1" max="100" value="3" step="10"> -->
+        <input id="num" type="range"  min="1" max="100" value="3" step="10">
+        <div id="tip">
+        </div>
+        <img id="img1" src="imgs/gm1-6.jpg" alt="">
+    </div>
+    <script>
+        var a=document.getElementById("num");
+        a.onchange=function aa(){
+            var b=document.getElementById("tip");
+            // console.log(a.value)
+            b.innerText=a.value;
+            switch(a.value)
+            {
+                case "1":
+                    console.log("今天天气很好")
+                    break;
+                case "2":
+                    console.log("明天天气很好")
+                    break;
+                case "5":
+                    console.log("后天也好")
+                    break;
+                case "31":
+                    document.getElementById("img1").style.display="none";
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

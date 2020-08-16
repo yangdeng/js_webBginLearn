@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wb{
+            width: 122px;
+            margin: 0 auto;
+            border: solid 0px red;
+        }
+        #wb>.cls{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="wb">
+        <div class="top"></div>
+        <img src="../imgs/img02-5.png" alt="">
+        <div class="cls">
+            <img id="cls" src="../imgs/img01-5.png" alt="">
+        </div>
+    </div>
+    <script>
+        function $$(id){
+            return document.getElementById(id);
+        }
+        var btnCls = $$("cls");
+        btnCls.onclick=function(){
+            //添加一个询问对话框
+            var yesno = confirm("你真的想要关闭吗？")
+            if ( yesno ){
+                $$("wb").style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>

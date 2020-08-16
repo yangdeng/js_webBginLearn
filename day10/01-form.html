@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tip{
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- action标识提交到服务器的路径 -->
+    <!-- 1.表示验证事件不在提交按钮上，数据有表单元素提交
+    按钮是为表单服务，所以验证在表单上
+         2. 在onsubmit事件中如果返回值为false则不能提交，如果为true则
+        可以提交 -->
+    <form action=""  onsubmit="return sub();">
+        <!-- name是用于获取数据的名称 -->
+        <input type="text" name="aa" id="aa">
+
+        <input type="submit" value="提交">
+        <!-- 添加一个信息提示元素 -->
+        <div id="tip">内容不能为空</div>
+    </form>
+    <script>
+        //编写一个用于提交事件执行的函数
+        function sub(){
+            var tip = document.getElementById("tip");
+            //获取到文本框元素对象
+            var aa = document.getElementById("aa");
+            //判断文本框的内容是否为空
+            if (aa.value == "")
+            {
+                //显示错误提示信息
+                tip.style.display = "block";
+                //文本框元素获取焦点
+                aa.focus();
+                //阻止提交，返回false
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

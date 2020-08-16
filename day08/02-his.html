@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <script>
+        // var his = window.history;
+        // console.log(his);
+
+        //显示当前地址栏URL的信息
+        var loc = window.location;
+        console.log(loc.href);
+
+        //重新刷新一次页面
+        // loc.reload(false);//true不需要缓冲来刷新，flase需要缓冲
+    </script>
+    <button onclick="window.history.back()">返回</button>
+    <button onclick="window.history.forward()">前进</button>
+    <button onclick="window.location.reload(true)">刷新当前页面</button>
+</body>
+</html>

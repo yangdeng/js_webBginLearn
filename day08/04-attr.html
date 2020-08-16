@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span:hover{
+            color: #fff;
+            background-color: red; 
+        }
+        /* .foucus{
+            color: #fff;
+            background-color: red;
+        } */
+        .red{
+            color: red;
+        }
+        .fs{
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>首页</span>
+        <span>新闻</span>
+        <span>图片</span>
+        <span>热点</span>
+    </div>
+
+    <div id="tip">你好</div>
+    <script>
+        //获取元素对象，并给元素添加类别样式,多个用空格隔开
+        document.getElementById('tip').className='red fs';
+
+        var spans = document.getElementsByName('span')
+        spans[0].setAttribute('title',"这是一个首页")
+        spans[1].setAttribute('title',spans[0].getAttribute('title'))
+    </script>
+</body>
+</html>

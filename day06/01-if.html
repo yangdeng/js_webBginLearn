@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            width: 200px;
+            border: solid 1px #ccc;
+            margin: 0 auto;
+        }
+        #nav>.title{
+            border-bottom: solid 1px #ccc;
+            padding: 5px 0;
+            background-color: #eee;
+            /* cursor: pointer; */
+            cursor: move;
+        }
+        #nav>.connect1{
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div id="title" class="title" onclick="aa()">
+            标题
+        </div>
+        <div id="connect1" class="connect1">
+            分支结构学习！加油！加油！
+            分支结构学习！加油！加油！
+            分支结构学习！加油！加油！
+            分支结构学习！加油！加油！
+            分支结构学习！加油！加油！
+        </div>
+    </div>
+    <script>
+        //编写代码块内容
+        function aa(){
+            //获取到标题和内容元素对象
+            // var a=document.getElementById("title");
+            // var b=document.getElementById("connect1");
+            // console.log(b);
+            var a=document.getElementsByClassName("title")[0];
+            var b=document.getElementsByClassName("connect1")[0];
+            if(b.style.display == ""){
+                b.style.display="none";
+            }
+            else{
+                b.style.display="";
+            }
+        }
+    </script>
+</body>
+</html>

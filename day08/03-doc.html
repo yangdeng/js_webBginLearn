@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <p class="p1">4</p>
+    <p class="p1">5</p>
+    <p class="p1">6</p> -->
+
+    <input type="text" name="" id="">
+    <span>1</span>
+    <span>2</span>
+
+    <script>
+        // //获取标签名称集合
+        // var divs = document.getElementsByTagName('div');
+        // //在控制台输出标签名集合
+        // console.log(divs);
+        // //在控制台输出第二个节点
+        // console.log(divs[1]);
+
+        // //获取类别名称集合
+        // var ps = document.getElementsByClassName('p1');
+        // console.log(ps);
+        var inputs = document.getElementsByTagName('input');
+        var spans = document.getElementsByTagName('span')
+        inputs[0].oninput=function(){
+            spans[0].innerText = inputs[0].value;
+            spans[1].innerText = inputs[0].value;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tip{
+            border: solid 1px #ccc;
+            width: 200px;
+            margin: 0 auto;
+            padding: 10px 0;
+            text-align: center;
+            background-color: blue;
+            color: #fff;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="tip">
+        jQuery框架也不过如此！
+    </div>
+    <div>a</div>
+    <div id="mid">b</div>
+    <div>c</div>
+
+    <div id="parent">
+
+        <div>addaggagg</div>
+    </div>
+    <script>
+        // $("#tip").addClass('red').css("color","#fff");
+        $("#tip").on("click",function(){
+            console.log("ok");
+            $("#tip").toggleClass("red");
+        })
+        
+        console.log($("#mid").prev().text());
+        console.log($("#mid").next().text());
+
+        //创建一个div元素
+        var $div=$("<div></div>")
+        $div.attr("id","child").html("我是一个动态元素").css("color",'red');
+        // $("#parent").html($div);
+        // $("#parent").append($div)
+        $("#parent").prepend($div);
+    </script>
+</body>
+</html>
